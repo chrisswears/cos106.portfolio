@@ -1,0 +1,454 @@
+/* Base Style Foundations */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Header & Navigation Styling */
+header {
+    background-color: #032b69;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #bfd3f2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Hero Section Layout */
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.hero-img-container {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #032b69;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Buttons and Interactions */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: #0b4bb0;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #032b69;
+}
+
+.btn-secondary {
+    background-color: #0c2447;
+    color: #fff;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    background-color: #0b4bb0;
+    color: #fff;
+}
+
+/* White Cards Components */
+.bio-card, .page-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 35px;
+}
+
+.bio-card h2, .page-card h2 {
+    margin-bottom: 15px;
+    color: #0c2447;
+}
+
+.section-title {
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+
+/* Technical Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #fdfdfd;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.skill-card h4 {
+    color: #0b4bb0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Projects Component Gallery */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-info h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+/* Academic Planner Styling */
+.planner-input-group {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.planner-input-group input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.task-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f9fbfd;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.task-item.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-actions button {
+    margin-left: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+}
+
+/* Forms & Tables Layout */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.error-box {
+    background-color: #fce8e6;
+    color: #a81c1c;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #f5c2c2;
+}
+
+.academic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.academic-table th, .academic-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.academic-table th {
+    background-color: #0b4bb0;
+    color: white;
+}
+
+.media-container {
+    margin-top: 15px;
+}/* Media Controls container */
+
+
+/* Footer Section */
+footer {
+    background-color: #032b69;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Responsive Breakpoint Handling */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+/* --- About Me Page Specific Styling Fixes --- */
+
+/* Gives separation between different text blocks */
+.about-section {
+    margin-bottom: 30px;
+}
+
+/* Adds spacing directly under subheadings */
+.page-card h3 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    color: #032b69;
+}
+
+/* Adds spacing for paragraph text */
+.about-section p {
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Fixes lists being cut off or touching the left wall */
+.hobbies-list {
+    margin-left: 25px; /* Pushes the bullets safely inside the card view */
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Rounds corners of video player and spaces it out nicely */
+.media-container video {
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+/* --- Projects Page Grid & Image Fixes --- */
+
+/* Targets the container holding your cards and makes them sit in a row grid */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Enhances the project item cards */
+.project-item {
+    background-color: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Forces the images to fit beautifully inside the top half of the cards */
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Prevents the image from stretching out of proportion */
+    border-bottom: 1px solid #e1e4e8;
+}
+
+/* Adds clean padding inside the text area of the card */
+.project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #032b69;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 15px;
+}
+/* --- Academic Planner Tasks Styling --- */
+#planner-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#planner-list li {
+    background: #f8f9fa;
+    border-left: 4px solid #032b69;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#planner-list li:hover {
+    background: #ffe3e3; /* Light red tint on hover to signify removal */
+    text-decoration: line-through;
+}
+/* Bring the contact section to the absolute front layer */
+.page-card, .form-group, form {
+    position: relative;
+    z-index: 10;
+}
+
+/* Force the inputs to be clickable and accept typing */
+input, textarea, button {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto !important; /* Forces the browser to pass your mouse clicks directly to the text fields */
+}

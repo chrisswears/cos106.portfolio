@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Planner | Christian Onwuka Oji</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Christian Onwuka Oji</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="planner.html" class="active">Academic Planner</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-card">
+            <h2>Academic Planner</h2>
+            <p>Use this interactive interface to schedule, process, and complete assignment milestones.</p>
+            
+            <div class="planner-input-group">
+                <input type="text" id="task-input" placeholder="Enter academic task or milestone...">
+                <button id="add-task-btn" class="btn btn-primary">Add Task</button>
+            </div>
+
+            <ul id="task-list" class="task-list">
+                </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Christian Onwuka Oji | Cybersecurity Student</p>
+    </footer>
+
+    <script src="js/planner.js">
+
+    </script>
+<script>
+    // Grab the HTML elements from the page
+    const taskInput = document.getElementById('task-input');
+    const addTaskBtn = document.getElementById('add-task-btn');
+    const plannerList = document.getElementById('planner-list');
+
+    // Listen for clicks on the "Add Task" button
+    addTaskBtn.addEventListener('click', function() {
+        const taskText = taskInput.value.trim();
+
+        // Only add if the user actually typed something
+        if (taskText !== "") {
+            // Create a new list item (li)
+            const li = document.createElement('li');
+            li.textContent = taskText;
+            
+            // Optional styling: add a click listener to remove the task when finished
+            li.addEventListener('click', function() {
+                li.remove();
+            });
+
+            // Put the new item into our list container
+            plannerList.appendChild(li);
+
+            // Clear out the input text box so it's ready for the next task
+            taskInput.value = "";
+        }
+    });
+
+    // Optional: Allow pressing the "Enter" key on keyboard to add tasks too
+    taskInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            addTaskBtn.click();
+        }
+    });
+</script>
+<script>
+    // 1. Grab the HTML elements from your layout
+    const taskInput = document.getElementById('task-input') || document.querySelector('input[type="text"]');
+    const addTaskBtn = document.getElementById('add-task-btn') || document.querySelector('button');
+    let plannerList = document.getElementById('planner-list');
+
+    // 2. Safely create the list container if it doesn't exist in your HTML
+    if (!plannerList) {
+        plannerList = document.createElement('ul');
+        plannerList.id = 'planner-list';
+        addTaskBtn.parentNode.appendChild(plannerList);
+    }
+
+    // 3. Listen for clicks on the "Add Task" button
+    addTaskBtn.addEventListener('click', function() {
+        const taskText = taskInput.value.trim();
+
+        if (taskText !== "") {
+            const li = document.createElement('li');
+            li.textContent = taskText;
+            
+            // Clicking a task cross-checks/deletes it from your timeline
+            li.addEventListener('click', function() {
+                li.remove();
+            });
+
+            plannerList.appendChild(li);
+            taskInput.value = ""; // Clear input box
+        }
+    });
+
+    // 4. Let users hit the 'Enter' key to append a milestone rapidly
+    taskInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            addTaskBtn.click();
+        }
+    });
+</script>
+
+</body>
+</html>

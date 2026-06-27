@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Christian Oji</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Christian Oji</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="planner.html">Academic Planner</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-card">
+            <h2>Contact Me</h2>
+            <p>Please populate the form fields below to reach out. Every item undergoes strict format confirmation.</p>
+            
+            <div id="error-message-box" class="error-box" style="display: none;"></div>
+            
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" placeholder="John Doe" required>           
+                </div>
+                
+                <div class="form-group">
+                    <label for="email-addr">Email Address:</label>
+                    <input type="email" id="email-addr" placeholder="example@domain.com" required>      
+                </div>
+
+                <div class="form-group">
+                    <label for="phone-num">Phone Number:</label>
+                    <input type="tel" id="phone-num" placeholder="08012345678" required> 
+                </div>
+
+                <div class="form-group">
+                    <label for="user-msg">Message:</label>
+                    <textarea id="user-msg" rows="5" placeholder="Write your message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Christian Oji | Cybersecurity Student</p>
+    </footer>
+
+    <script src="js/validation.js"></script>
+</body>
+</html>

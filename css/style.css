@@ -483,30 +483,22 @@ footer {
         box-sizing: border-box !important;
     }
 
-    /* 3. Table Wrapper (FORCE HORIZONTAL SCROLL) */
-    .table-container {
+    /* 3. Bulletproof Table Scrolling (Turns the table itself into a scrollable block) */
+    .academic-table {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
-        overflow-x: scroll !important; /* Forces scroll bar visibility if needed */
-        -webkit-overflow-scrolling: touch; /* Extra smooth swiping on iOS devices */
-        margin: 15px 0 !important;
-        border: 1px solid #eaeaea;
-        border-radius: 6px;
+        overflow-x: auto !important; /* Forces scrollbar on the table */
+        -webkit-overflow-scrolling: touch; /* Smooth swipe on iOS */
+        border-collapse: collapse !important;
+        white-space: nowrap !important; /* Prevents text from being crushed vertically */
     }
 
-    /* Keep table columns readable by establishing a wider default minimum layout */
-    .academic-table {
-        display: table !important;
-        width: 100% !important;
-        min-width: 550px !important; /* Force it to remain wider than your screen so it scrolls! */
-        margin: 0 !important;
-    }
-
+    /* Give table elements clean spacing during horizontal scroll */
     .academic-table th, .academic-table td {
-        white-space: normal !important; /* Allow course names to wrap nicely inside their cells */
+        min-width: 120px !important; /* Ensures columns stay wide enough to read */
+        padding: 10px 12px !important;
         font-size: 0.85rem !important;
-        padding: 10px 8px !important;
     }
 
     /* 4. Text and Paragraphs wrapping safety */

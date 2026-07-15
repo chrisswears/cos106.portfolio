@@ -417,7 +417,7 @@ footer {
 }
 
 /* ==========================================================================
-   11. RESPONSIVE BREAKPOINT HANDLING (Consolidated)
+   11. RESPONSIVE BREAKPOINT HANDLING (Consolidated & Bulletproof)
    ========================================================================== */
 
 /* Tablet View Adjustments */
@@ -431,13 +431,30 @@ footer {
     }
 }
 
-/* Mobile View Adjustments (Fixes Navigation clipping) */
+/* Mobile View Adjustments (Fixes Navigation, Tables, Lists & Contact Form) */
 @media (max-width: 600px) {
+    /* Prevent the entire page from ever scrolling horizontally */
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Force the main container to stay inside the screen boundaries */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 12px !important;
+        margin: 10px auto !important;
+        overflow-hidden: hidden !important;
+    }
+
+    /* 1. Header Navigation Styling */
     header {
         flex-direction: column !important;
         align-items: center !important;
         padding: 15px 10px !important;
         gap: 12px !important;
+        width: 100% !important;
     }
     
     nav ul, .nav-links {
@@ -459,31 +476,52 @@ footer {
         padding: 6px 10px !important;
         border-bottom: none !important;
     }
-/* --- FIX FOR THE ABOUT ME PAGE --- */
-    
-    /* 1. Force the table to become scrollable inside its card instead of breaking the screen */
-    .academic-table {
+
+    /* 2. Page Card Layout (Shrink padding so text has more room to wrap) */
+    .bio-card, .page-card {
+        padding: 15px !important;
+        margin-bottom: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Table Wrapper (Forces ONLY the table to scroll, keeping the page clean) */
+    .table-container {
         display: block !important;
         width: 100% !important;
-        overflow-x: auto !important; /* Enables swipe-to-scroll on mobile */
-        white-space: nowrap !important; /* Keeps columns clean and readable */
+        max-width: 100% !important;
+        overflow-x: auto !important; /* Enables swiping on the table */
+        margin: 15px 0 !important;
+        border: 1px solid #eaeaea;
+        border-radius: 6px;
     }
 
-    /* 2. Make the columns look balanced on small screens */
-    .academic-table th, .academic-table td {
-        padding: 8px 10px !important;
-        font-size: 0.85rem !important;
+    .academic-table {
+        width: 100% !important;
+        min-width: 450px !important; /* Table stays readable inside its scrollable box */
+        margin: 0 !important;
     }
 
-    /* 3. Adjust the skills grid to stack perfectly in a single column on tiny screens */
+    /* 4. Text and Paragraphs wrapping safety */
+    p, h1, h2, h3, h4 {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    /* 5. Skills and Lists */
     .skills-grid {
         grid-template-columns: 1fr !important;
         gap: 15px !important;
     }
 
-    /* 4. Ensure lists look perfectly indented and centered */
     .hobbies-list {
         margin-left: 20px !important;
         font-size: 0.9rem !important;
+    }
+
+    /* 6. Responsive Video Iframe (Fixes tall distorted video on mobile) */
+    .media-container iframe {
+        height: 220px !important; /* Perfect height ratio for phones */
     }
 }

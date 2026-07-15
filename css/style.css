@@ -415,7 +415,6 @@ footer {
     padding: 20px;
     margin-top: auto;
 }
-
 /* ==========================================================================
    11. RESPONSIVE BREAKPOINT HANDLING (Consolidated & Bulletproof)
    ========================================================================== */
@@ -445,7 +444,6 @@ footer {
         max-width: 100% !important;
         padding: 0 12px !important;
         margin: 10px auto !important;
-        overflow-hidden: hidden !important;
     }
 
     /* 1. Header Navigation Styling */
@@ -485,21 +483,30 @@ footer {
         box-sizing: border-box !important;
     }
 
-    /* 3. Table Wrapper (Forces ONLY the table to scroll, keeping the page clean) */
+    /* 3. Table Wrapper (FORCE HORIZONTAL SCROLL) */
     .table-container {
         display: block !important;
         width: 100% !important;
         max-width: 100% !important;
-        overflow-x: auto !important; /* Enables swiping on the table */
+        overflow-x: scroll !important; /* Forces scroll bar visibility if needed */
+        -webkit-overflow-scrolling: touch; /* Extra smooth swiping on iOS devices */
         margin: 15px 0 !important;
         border: 1px solid #eaeaea;
         border-radius: 6px;
     }
 
+    /* Keep table columns readable by establishing a wider default minimum layout */
     .academic-table {
+        display: table !important;
         width: 100% !important;
-        min-width: 450px !important; /* Table stays readable inside its scrollable box */
+        min-width: 550px !important; /* Force it to remain wider than your screen so it scrolls! */
         margin: 0 !important;
+    }
+
+    .academic-table th, .academic-table td {
+        white-space: normal !important; /* Allow course names to wrap nicely inside their cells */
+        font-size: 0.85rem !important;
+        padding: 10px 8px !important;
     }
 
     /* 4. Text and Paragraphs wrapping safety */
@@ -520,8 +527,8 @@ footer {
         font-size: 0.9rem !important;
     }
 
-    /* 6. Responsive Video Iframe (Fixes tall distorted video on mobile) */
+    /* 6. Responsive Video Iframe */
     .media-container iframe {
-        height: 220px !important; /* Perfect height ratio for phones */
+        height: 220px !important;
     }
 }

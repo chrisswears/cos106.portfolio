@@ -459,4 +459,31 @@ footer {
         padding: 6px 10px !important;
         border-bottom: none !important;
     }
+/* --- FIX FOR THE ABOUT ME PAGE --- */
+    
+    /* 1. Force the table to become scrollable inside its card instead of breaking the screen */
+    .academic-table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important; /* Enables swipe-to-scroll on mobile */
+        white-space: nowrap !important; /* Keeps columns clean and readable */
+    }
+
+    /* 2. Make the columns look balanced on small screens */
+    .academic-table th, .academic-table td {
+        padding: 8px 10px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* 3. Adjust the skills grid to stack perfectly in a single column on tiny screens */
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* 4. Ensure lists look perfectly indented and centered */
+    .hobbies-list {
+        margin-left: 20px !important;
+        font-size: 0.9rem !important;
+    }
 }
